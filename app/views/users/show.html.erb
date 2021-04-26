@@ -1,0 +1,6 @@
+<h1>Profile</h1>
+<div>
+  <%= image_tag @user.image.url %><br>
+  <%= @user.name %><br>
+  <%= link_to 'Edit Profile', edit_user_path %>
+</div>
