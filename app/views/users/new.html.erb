@@ -1,2 +1,11 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Create New Account</h1>
+<div>
+<%= form_with(model: @user, local: true, url: users_path) do |f| %>
+  <%= f.text_field :name, placeholder: "Name"%><br>
+  <%= f.text_field :email, placeholder: "Email"%><br>
+  <%= f.password_field :password, placeholder: "Password"%><br>
+  <%= f.password_field :password_confirmation, placeholder: "Password Confirmation"%><br>
+  <%= f.file_field :image %><br>
+  <%= f.submit "Create Account" %>
+<% end %>
+</div>
