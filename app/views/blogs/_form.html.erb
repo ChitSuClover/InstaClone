@@ -2,6 +2,7 @@
   <%= form_with(model: @blog, local: true, url: blogs_path) do |f| %>
     <%= f.text_field :content %><br>
     <%= f.file_field :image %><br>
+    <% image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
     <%= f.hidden_field :image_cache %><br>
     <%= f.submit 'Post' %>
   <% end %>
