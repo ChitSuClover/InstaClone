@@ -1,0 +1,8 @@
+<div>
+  <%= form_with(model: @blog, local: true, url: blogs_path) do |f| %>
+    <%= f.text_field :content %><br>
+    <%= f.file_field :image %><br>
+    <%= f.hidden_field :image_cache %><br>
+    <%= f.submit 'Post' %>
+  <% end %>
+</div>
