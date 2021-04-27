@@ -23,6 +23,13 @@ class BlogsController < ApplicationController
   end
   def show
   end
+  def update
+    if @blog.update(blog_params)
+      redirect_to blogs_path, notice: "Post updated"
+    else
+      render :edit
+    end
+  end
   def confirm
     @blog = current_user.blogs.build(blog_params)
     render :new if @blog.invalid?
