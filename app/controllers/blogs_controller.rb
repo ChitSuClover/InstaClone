@@ -7,7 +7,17 @@ class BlogsController < ApplicationController
     @blog = Blog.new
   end
   def create
-
+    if params[:back]
+      @blog = current_user.blogs.build(blog_params)
+      render :new
+    else
+      @blog = current_user.blogs.build(blog_params)
+      if @blog.save
+        redirect_to blogs_path, notice: "Post created"
+      else
+        render :new
+      end
+    end
   end
   def edit
   end
