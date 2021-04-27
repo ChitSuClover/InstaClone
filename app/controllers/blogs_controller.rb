@@ -34,6 +34,10 @@ class BlogsController < ApplicationController
     @blog = current_user.blogs.build(blog_params)
     render :new if @blog.invalid?
   end
+  def destroy
+    @blog.destroy
+    redirect_to blogs_path, notict: "Post deleted"
+  end
   private
   def set_blog
     @blog = Blog.find(params[:id])
