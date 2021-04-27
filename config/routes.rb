@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'blogs/index'
   resources :users, only: [:new, :create, :edit, :show]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :blogs do
+    collection do
+      post :confirm
+    end
+  end
 end
