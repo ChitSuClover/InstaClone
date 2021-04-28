@@ -2,3 +2,5 @@
   <%= @blog.user.name %><br>
   <%= @blog.content %><br>
   <%= image_tag @blog.image.url %>
+  <%= link_to 'Create Post', new_blog_path %>
+  <%= link_to 'Edit', edit_blog_path(@blog.id), data: {confirm: "Confirm Edit!"} %>

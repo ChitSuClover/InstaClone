@@ -24,8 +24,12 @@ class BlogsController < ApplicationController
   def show
   end
   def update
-    if @blog.update(blog_params)
-      redirect_to blogs_path, notice: "Post updated"
+    if current_user && current_user.id == @blog.user_id
+      if @blog.update(blog_params)
+        redirect_to blogs_path, notice: "Post updated"
+      else
+        render :edit
+      end
     else
       render :edit
     end
@@ -35,8 +39,12 @@ class BlogsController < ApplicationController
     render :new if @blog.invalid?
   end
   def destroy
-    @blog.destroy
-    redirect_to blogs_path, notict: "Post deleted"
+    if current_user && current_user.id == @blog.user_id
+      @blog.destroy
+      redirect_to blogs_path, notict: "Post deleted"
+    else
+      render :new
+    end
   end
   private
   def set_blog

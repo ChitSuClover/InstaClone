@@ -8,10 +8,12 @@
       <%= b.user.name %><br>
       <%= image_tag b.image.url %><br>
       <%= b.content %>
-      <%= link_to 'Edit Profile', edit_user_path(b.user.id) %>
-      <%= link_to 'View', blog_path(b.id) %>
-      <%= link_to 'Edit', edit_blog_path(b.id), data: {confirm: "Confirm Edit!"} %>
-      <%= link_to 'Delete', blog_path(b.id), method: :delete, data: {confirm: "Confirm Delete!"} %><br>
+      <% if current_user && current_user.id == b.user_id %>
+        <%= link_to 'Edit Profile', edit_user_path(b.user.id) %>
+        <%= link_to 'View', blog_path(b.id) %>
+        <%= link_to 'Edit', edit_blog_path(b.id), data: {confirm: "Confirm Edit!"} %>
+        <%= link_to 'Delete', blog_path(b.id), method: :delete, data: {confirm: "Confirm Delete!"} %><br>
       <% end %>
+    <% end %>
   </div>
 </div>
