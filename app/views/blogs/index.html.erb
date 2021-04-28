@@ -4,14 +4,14 @@
 
   <div>
     <% @blogs.each do |b| %>
-      <%= image_tag b.user.image.url %>
+      <%= image_tag b.user.image.url %><br>
       <%= b.user.name %><br>
       <%= image_tag b.image.url %><br>
       <%= b.content %>
-
+      <%= link_to 'Edit Profile', edit_user_path(b.user.id) %>
       <%= link_to 'View', blog_path(b.id) %>
       <%= link_to 'Edit', edit_blog_path(b.id), data: {confirm: "Confirm Edit!"} %>
-      <%= link_to 'Delete', blog_path(b.id), method: :delete, data: {confirm: "Confirm Delete!"} %>
+      <%= link_to 'Delete', blog_path(b.id), method: :delete, data: {confirm: "Confirm Delete!"} %><br>
       <% end %>
   </div>
 </div>
