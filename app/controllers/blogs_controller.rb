@@ -13,6 +13,7 @@ class BlogsController < ApplicationController
     else
       @blog = current_user.blogs.build(blog_params)
       if @blog.save
+        ContactMailer.contact_mail(@blog).deliver 
         redirect_to blogs_path, notice: "Post created"
       else
         render :new
