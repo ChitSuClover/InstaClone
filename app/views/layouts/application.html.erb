@@ -4,12 +4,23 @@
     <title>InstaClone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=divice-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div align="center">
+      <% flash.each do |key,value|%>
+        <%= content_tag(:div,value,class:"#{key}") %>
+      <% end %>
+      <% if logged_in? %>
+        <%= link_to "Logout", session_path(current_user.id), method: :delete%>
+      <% else %>
+        <%= link_to "Log In", new_session_path%><br>
+        <%= link_to "Create New Account", new_user_path%>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
