@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :blogs
   has_many :favourites, dependent: :destroy
+  has_many :favourite_blogs, through: :favourites, source: :blog
   validates :name ,presence: true, length: {maximum: 20}
   validates :email ,presence: true, length: {maximum: 255},format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, on: :create
   before_validation {email.downcase!}
