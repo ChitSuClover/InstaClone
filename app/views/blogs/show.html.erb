@@ -2,5 +2,12 @@
   <%= @blog.user.name %><br>
   <%= @blog.content %><br>
   <%= image_tag @blog.image.url %>
+    <% unless @blog.user_id == current_user.id %>
+      <% if @favourite.present? %>
+        <%= link_to 'Unlike', favourite_path(id: @favourite.id), method: :delete %>
+      <% else %>
+        <%= link_to 'Like', favourites_path(blog_id: @blog.id), method: :post %>
+      <% end %>
+    <% end %>
   <%= link_to 'Create Post', new_blog_path %>
   <%= link_to 'Edit', edit_blog_path(@blog.id), data: {confirm: "Confirm Edit!"} %>

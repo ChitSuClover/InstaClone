@@ -13,7 +13,7 @@ class BlogsController < ApplicationController
     else
       @blog = current_user.blogs.build(blog_params)
       if @blog.save
-        ContactMailer.contact_mail(@blog).deliver 
+        ContactMailer.contact_mail(@blog).deliver
         redirect_to blogs_path, notice: "Post created"
       else
         render :new
@@ -23,6 +23,7 @@ class BlogsController < ApplicationController
   def edit
   end
   def show
+    @favourite = current_user.favourites.find_by(blog_id: @blog.id)
   end
   def update
     if current_user && current_user.id == @blog.user_id
