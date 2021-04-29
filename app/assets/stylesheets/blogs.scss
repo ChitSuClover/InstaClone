@@ -1,0 +1,60 @@
+h1 {
+  background: linear-gradient(to right, #C4180A, #57052E, #C4180A);
+  color: #fff;
+  font-family: Lora;
+  text-align: center;
+  padding: 10px;
+}
+p{
+  font-family:cursive;
+  color: #000;
+  font-style: 2em;
+  padding: 5px 20px;
+}
+.home_div{
+  background-color: #fff;
+  width:800px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100%;
+}
+.blog_div
+{
+  background-color: #BFCDCC;
+  width: 500px;
+  margin: 25px auto;
+  border-radius: 15px;
+}
+.profile_image{
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+  margin: 10px;
+  float: left;
+}
+.user_name{
+  font-family: Cambria;
+  font-size: 3em;
+}
+.image_style{
+  height: 300px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.links_div{
+  background-color: gray;
+  text-align: center;
+  border-radius: 0px 0px 15px 15px;
+  height: 30px;
+}
+.links{
+  color: #fff;
+  font-family: monospace;
+  text-decoration: none;
+}
+.links:hover{
+  color:#BFCDCC;
+  text-decoration: none;
+}

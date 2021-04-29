@@ -1,19 +1,20 @@
-<h1>Home</h1>
+<h2>HOME</h2>
 <%= link_to 'Create Post', new_blog_path %>
-<div>
-
-  <div>
+  <div class="home_div">
     <% @blogs.each do |b| %>
-      <%= image_tag b.user.image.url %><br>
-      <%= b.user.name %><br>
-      <%= image_tag b.image.url %><br>
-      <%= b.content %>
+    <div class="blog_div">
+      <%= image_tag b.user.image.url, class: "profile_image"%>
+      <p class="user_name"><%= b.user.name %></p><br>
+      <%= image_tag b.image.url, class:"image_style" %><br>
+      <p style="white-space:pre-wrap"><%= b.content %></p><br>
+      <div class="links_div" >
       <% if current_user && current_user.id == b.user_id %>
-        <%= link_to 'Edit Profile', edit_user_path(b.user.id) %>
-        <%= link_to 'View', blog_path(b.id) %>
-        <%= link_to 'Edit', edit_blog_path(b.id), data: {confirm: "Confirm Edit!"} %>
-        <%= link_to 'Delete', blog_path(b.id), method: :delete, data: {confirm: "Confirm Delete!"} %><br>
+        <%= link_to 'Edit Profile |', edit_user_path(b.user.id), class:"links" %>
+        <%= link_to 'View |', blog_path(b.id), class:"links" %>
+        <%= link_to 'Edit |', edit_blog_path(b.id), data: {confirm: "Confirm Edit!"}, class:"links" %>
+        <%= link_to 'Delete', blog_path(b.id), method: :delete, data: {confirm: "Confirm Delete!"} , class:"links"%><br>
       <% end %>
+      </div>
+    </div>
     <% end %>
   </div>
-</div>
