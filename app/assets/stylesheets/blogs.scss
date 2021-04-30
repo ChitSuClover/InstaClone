@@ -121,3 +121,12 @@ p{
   vertical-align: middle;
   margin: auto 190px;
 }
+ul {
+  list-style-position: inside;
+}
+.blog_error{
+  background-color: #fff;
+  width: 500px;
+  margin: 25px auto;
+  color:red;
+}
