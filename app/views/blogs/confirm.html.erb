@@ -1,11 +1,11 @@
-<div>
+<div class="blog_div" align="center">
   <%= form_with(model: @blog, local: true, url: blogs_path) do |f| %>
     <%= f.hidden_field :content %><br>
     <%= f.hidden_field :image %><br>
-    <%= @blog.content %>
-    <% image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
+    <p class="new_post"><%= @blog.content %></p>
+    <%= image_tag(@blog.image.url, class:"image_style") if @blog.image && @blog.image.url %>
     <%= f.hidden_field :image_cache %><br>
-    <%= f.submit 'Post' %>
-    <%= f.submit 'Back', name: 'back' %>
+    <%= f.submit 'Post', class:"create_btn"%>
+    <%= f.submit 'Back', name: 'back', class:"back_btn"%>
   <% end %>
 </div>

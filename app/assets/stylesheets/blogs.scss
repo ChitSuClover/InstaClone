@@ -1,3 +1,9 @@
+.top_links{
+  color: #000;
+  font-family: Lora;
+  text-decoration: none;
+  vertical-align: middle;
+}
 h1 {
   background: linear-gradient(to right, #fff, #000, #fff);
   color: #fff;
@@ -32,9 +38,8 @@ p{
   min-height: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-    clear: both;
 }
-.blog_div
+.blog_div, h2
 {
   background-color: #fff;
   width: 500px;
@@ -78,4 +83,26 @@ p{
 .links:hover{
   color:#BFCDCC;
   text-decoration: none;
+}
+.new_post{
+  margin: 10px 50px;
+  border: 2px solid #E1E2E2;
+  text-align: left;
+}
+.post_btn{
+  margin: 10px 50px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  background: #2D3237;
+  color: #fff;
+}
+.post_btn:hover, .create_btn:hover, .back_btn:hover{
+  background: gray;
+}
+.create_btn, .back_btn{
+  margin: 10px 0px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  background: #2D3237;
+  color: #fff;
 }

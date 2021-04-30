@@ -8,17 +8,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <div align="center">
       <% flash.each do |key,value|%>
-        <%= content_tag(:div,value,class:"#{key}") %>
+        <%= content_tag(:div,value,class:"#{key}") %><br>
       <% end %>
       <% if logged_in? %>
-        <%= link_to "Logout", session_path(current_user.id), method: :delete%>
+        <%= link_to "Logout |", session_path(current_user.id), method: :delete, class:"top_links"%>
       <% else %>
-        <%= link_to "Log In", new_session_path%><br>
-        <%= link_to "Create New Account", new_user_path%>
+        <%= link_to "Log In |", new_session_path, class:"top_links"%>
+        <%= link_to "Create Account", new_user_path, class:"top_links"%>
       <% end %>
     </div>
     <h1>InstaClone</h1>

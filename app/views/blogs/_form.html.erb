@@ -1,9 +1,9 @@
-<div>
+<div class="blog_div">
   <%= form_with(model: @blog, local: true, url: choose_new_or_edit) do |f| %>
-    <%= f.text_field :content %><br>
-    <%= f.file_field :image %><br>
-    <% image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
-    <%= f.hidden_field :image_cache %><br>
-    <%= f.submit 'Post' %>
+    <%= f.text_field :content, placeholder:"Type here", class:"new_post" %>
+    <%= f.file_field :image , class:"new_post"%>
+    <%= image_tag(@blog.image.url, class:"image_style") if @blog.image && @blog.image.url %>
+    <%= f.hidden_field :image_cache %>
+    <%= f.submit 'Post', class:"post_btn"%>
   <% end %>
 </div>
