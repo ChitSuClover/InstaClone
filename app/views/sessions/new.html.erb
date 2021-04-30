@@ -1,6 +1,8 @@
-<h1>Log In</h1>
+<h2 align="center">Log In</h2>
+<div class="blog_div">
 <%= form_with(scope: :session, local: true, url: sessions_path) do |f|%>
-  <%= f.email_field :email %><br>
-  <%= f.password_field :password %><br>
-  <%= f.submit "Log In" %>
+  <%= f.email_field :email , placeholder:"Email", class:"new_post"%><br>
+  <%= f.password_field :password , placeholder:"password", class:"new_post"%><br>
+  <%= f.submit "Log In", class:"post_btn" %>
 <% end %>
+</div>
