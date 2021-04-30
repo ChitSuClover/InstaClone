@@ -1,0 +1,9 @@
+<h2 align="center">
+  <span class="glyphicon glyphicon-heart"></span>
+</h2>
+<% @favourites.each do |favourite| %>
+  <div class="blog_div">
+    <p style="white-space:pre-wrap"><%= favourite.blog.content %></p>
+    <%= image_tag favourite.blog.image.url, class:"image_style" %>
+  </div>
+<% end %>

@@ -15,7 +15,9 @@
       <% end %>
       <% if logged_in? %>
         <%= link_to "Logout |", session_path(current_user.id), method: :delete, class:"top_links"%>
-        <%= link_to "Create Account", new_user_path, class:"top_links"%>
+        <%= link_to "Create Account |", new_user_path, class:"top_links"%>
+        <%= link_to 'Home |', blogs_path , class:"top_links"%>
+        <%= link_to "Favourites", favourites_path , class:"top_links"%>
       <% else %>
         <%= link_to "Log In |", new_session_path, class:"top_links"%>
         <%= link_to "Create Account", new_user_path, class:"top_links"%>

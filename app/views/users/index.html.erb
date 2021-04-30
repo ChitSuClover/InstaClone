@@ -1,6 +1,0 @@
-<h1> Users Home </h1>
-<% @users.each do |u| %>
-  <%= u.name %>
-  <%= image_tag u.image.url %>
-  <%= link_to 'Edit Profile', edit_user_path(u.id) %>
-<% end %>

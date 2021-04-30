@@ -5,7 +5,7 @@
   <p class="user_name"><%= @blog.user.name %></p><br>
   <p class="new_post"><%= @blog.content %></p><br>
   <%= image_tag @blog.image.url, class:"image_style" %><br>
-    <% if current_user && current_user.id == @blog.user_id %>
+
       <% if @favourite.present? %>
         <%= link_to favourite_path(id: @favourite.id), method: :delete, class:"favourite_icon" do %>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-frown-fill" viewBox="0 0 16 16">
@@ -19,13 +19,14 @@
           </svg>
         <% end %>
       <% end %>
-    <% end %>
     <%= link_to new_blog_path, class:"create_post_btn" do %>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
       <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
     </svg>
     <% end %>
+<% if current_user && current_user.id == @blog.user_id %>
   <%= link_to edit_blog_path(@blog.id), data: {confirm: "Confirm Edit!"}, class:"eraser_icon" do %>
     <span class="glyphicon glyphicon-erase"></span>
   <% end %>
+<% end %>
 </div>

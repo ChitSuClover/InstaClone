@@ -19,17 +19,17 @@
         <%= link_to edit_user_path(b.user.id), class:"links" do%>
           <span class="glyphicon glyphicon-user"></span>
         <% end %>
-        <%= link_to blog_path(b.id), class:"links" do%>
-          <span class="glyphicon glyphicon-eye-open"></span>
-        <% end %>
         <%= link_to edit_blog_path(b.id), data: {confirm: "Confirm Edit!"}, class:"links" do%>
           <span class="glyphicon glyphicon-erase"></span>
         <% end %>
         <%= link_to blog_path(b.id), method: :delete, data: {confirm: "Confirm Delete!"} , class:"links" do%>
           <span class="glyphicon glyphicon-trash"></span>
         <% end %>
+  <% end %>
+        <%= link_to blog_path(b.id), class:"links" do%>
+          <span class="glyphicon glyphicon-eye-open"></span>
+        <% end %>
       </div>
-    <% end %>
   </div>
   <% end %>
 </div>
