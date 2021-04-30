@@ -1,4 +1,4 @@
-<h1>Create New Account</h1>
+<h2 align="center">Create Account</h2>
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error")%></h2>
@@ -9,13 +9,14 @@
     </ul>
   </div>
 <% end %>
-<div>
-<%= form_with(model: @user, local: true, url: users_path) do |f| %>
-  <%= f.text_field :name, placeholder: "Name"%><br>
-  <%= f.text_field :email, placeholder: "Email"%><br>
-  <%= f.password_field :password, placeholder: "Password"%><br>
-  <%= f.password_field :password_confirmation, placeholder: "Password Confirmation"%><br>
-  <%= f.file_field :image %><br>
-  <%= f.submit "Create Account" %>
-<% end %>
+  <div class="blog_div">
+    <%= form_with(model: @user, local: true, url: users_path) do |f| %>
+      <%= f.text_field :name, placeholder: "Name", class:"new_post"%><br>
+      <%= f.text_field :email, placeholder: "Email", class:"new_post"%><br>
+      <%= f.password_field :password, placeholder: "Password", class:"new_post"%><br>
+      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class:"new_post"%><br>
+      <%= f.file_field :image, class:"new_post"%><br>
+      <%= f.submit "Create Account", class:"post_btn" %>
+      <% end %>
+  </div>
 </div>

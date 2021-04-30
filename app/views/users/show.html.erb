@@ -1,6 +1,8 @@
-<h1>Profile</h1>
-<div>
-  <%= image_tag @user.image.url %><br>
-  <%= @user.name %><br>
-  <%= link_to 'Edit Profile', edit_user_path %>
+<h2 align="center">
+<span class="glyphicon glyphicon-user"></span></h2>
+<div class="blog_div">
+  <p class="user_name"><%= @user.name %></p><br>
+  <%= image_tag @user.image.url, class:"image_style"%><br>
+  <%= link_to 'Edit Profile', edit_user_path , class:"post_btn"%>
+  <%= link_to 'Home', blogs_path , class:"post_btn"%>
 </div>
