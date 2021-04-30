@@ -1,9 +1,22 @@
 h1 {
-  background: linear-gradient(to right, #C4180A, #57052E, #C4180A);
+  background: linear-gradient(to right, #fff, #000, #fff);
   color: #fff;
   font-family: Lora;
   text-align: center;
   padding: 10px;
+}
+#home_icon{
+  margin-left: 20px;
+  float: left;
+}
+.create_post_btn{
+  text-decoration: none;
+  margin-right: 20px;
+  float: right;
+  color:#000;
+}
+.create_post_btn:hover{
+  color:#5C5D5D;
 }
 p{
   font-family:cursive;
@@ -12,18 +25,22 @@ p{
   padding: 5px 20px;
 }
 .home_div{
-  background-color: #fff;
+  background-color: #EDEDF1;
   width:800px;
   margin-left: auto;
   margin-right: auto;
   min-height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+    clear: both;
 }
 .blog_div
 {
-  background-color: #BFCDCC;
+  background-color: #fff;
   width: 500px;
   margin: 25px auto;
   border-radius: 15px;
+  border: 1px solid #000;
 }
 .profile_image{
   height: 50px;
@@ -48,11 +65,15 @@ p{
   text-align: center;
   border-radius: 0px 0px 15px 15px;
   height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
 }
 .links{
   color: #fff;
   font-family: monospace;
   text-decoration: none;
+  vertical-align: middle;
+  margin: auto 40px;
 }
 .links:hover{
   color:#BFCDCC;
